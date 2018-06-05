@@ -1,9 +1,20 @@
 
-public class RoboCat extends VirtualPet {
+public class RoboCat extends VirtualPet implements RoboticInterface {
+
+	private static final int DEFAULT_RUST_LEVEL = 2;
+	private int rustLevel = DEFAULT_RUST_LEVEL;
 
 	public RoboCat(String name) {
 		super(name);
-		// TODO Auto-generated constructor stub
+	}
+
+	public int getRustLevel() {
+		return rustLevel;
+	}
+
+	@Override
+	public void oilAllPets() {
+		rustLevel -= 2;
 	}
 
 }

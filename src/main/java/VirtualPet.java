@@ -8,7 +8,7 @@ public class VirtualPet {
 
 	// Variables
 	private String name;
-	private int health = DEFAULT_HEALTH;
+	protected int health = DEFAULT_HEALTH;
 	protected int happiness = DEFAULT_HAPPINESS;
 
 	public VirtualPet(String name) {
@@ -17,7 +17,6 @@ public class VirtualPet {
 
 	public int getHappiness() {
 		return happiness;
-
 	}
 
 	public int getHealth() {
@@ -29,7 +28,9 @@ public class VirtualPet {
 		return name;
 	}
 
-
+public void tick() {
+	
+}
 	
 
 }

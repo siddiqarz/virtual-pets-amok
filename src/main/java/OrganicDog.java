@@ -1,5 +1,11 @@
 
-public class OrganicDog extends VirtualPet implements OrganicPetActivities {
+public class OrganicDog extends Dog implements OrganicPetActivities {
+	private static final int DEFAULT_THIRST_LEVEL = 1;
+	private static final int DEFAULT_HUNGER_LEVEL = 1;
+	private static final int DEFAULT_WASTE_LEVEL = 4;
+	protected int hungerLevel = DEFAULT_HUNGER_LEVEL;
+	protected int thirstLevel = DEFAULT_THIRST_LEVEL;
+	protected int wasteLevel = DEFAULT_WASTE_LEVEL;
 
 	public OrganicDog(String name) {
 		super(name);
@@ -8,13 +14,12 @@ public class OrganicDog extends VirtualPet implements OrganicPetActivities {
 
 	@Override
 	public int getWasteLevel() {
-		
-		return 5;
+		return wasteLevel;
 	}
 
 	@Override
 	public int getHungerLevel() {
-		
+
 		return 0;
 	}
 
@@ -23,4 +28,12 @@ public class OrganicDog extends VirtualPet implements OrganicPetActivities {
 		return 0;
 	}
 
+	public void walkAllDogs() {
+		super.walkAllDogs();
+		wasteLevel -= 5;
+	}
+
+	public void cleanCages() {
+		
+	}
 }

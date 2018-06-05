@@ -41,4 +41,8 @@ public class VirtualPetShelterTest { // emplo
 		assertThat(check, containsInAnyOrder(testOrgCat,testOrgDog,testRoboDog, testRoboCat));
 		
 	}
+	@Test
+	public void shouldBeAbleToGetDogsByCageNum() {
+		
+	}
 }
