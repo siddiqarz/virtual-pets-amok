@@ -1,14 +1,14 @@
 **Virtual Pets Amok Project**
 
-		VirtualPet class 
+##VirtualPet class 
 
-			* A model that allows for dogs and cats, either of which can be robotic or organic.
+* A model that allows for dogs and cats, either of which can be robotic or organic.
 
-			* Contains two attributes representing overall health and happiness
+* Contains two attributes representing overall health and happiness
 
-		VitualPetShelter Class
+##VitualPetShelter Class
 
-			* Contains methods that allow for
+* Contains methods that allow for
 
 					- Oiling all robotic pets
 
