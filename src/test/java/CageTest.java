@@ -49,4 +49,5 @@ RoboDog testRobo;
 		int cageDirtAfter = cageTest.getWasteLevel(cageTest.getCagesByNumber(2));
 		assertTrue(cageDirtBefore>cageDirtAfter);
 	}
+	
 }

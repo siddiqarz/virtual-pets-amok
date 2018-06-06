@@ -1,6 +1,8 @@
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Collection;
 
@@ -13,6 +15,7 @@ public class VirtualPetShelterTest { // emplo
 	RoboDog testRoboDog;
 	RoboCat testRoboCat;
 	VirtualPetShelter testShelter; // hosp
+	
 
 	@Before
 	public void setUp() {
@@ -22,6 +25,7 @@ public class VirtualPetShelterTest { // emplo
 		testOrgDog = new OrganicDog("Rover", "");
 		testRoboDog = new RoboDog("juju", "");
 		testRoboCat = new RoboCat("whiskers", "");
+		
 	}
 
 	@Test
@@ -42,7 +46,23 @@ public class VirtualPetShelterTest { // emplo
 		
 	}
 	@Test
-	public void shouldBeAbleToGetDogsByCageNum() {
-		
+	public void thirstShoulChangeWithTick() {
+		testShelter.addToPets(testOrgCat);
+		testShelter.addToPets(testRoboDog);
+		int thirstBefore = testOrgCat.getThirstLevel();
+	testShelter.tick();
+	int thirstAfter = testOrgCat.getThirstLevel();
+	assertTrue(thirstBefore<thirstAfter);
+	}
+	@Test
+	public void shouldBeAbleToRemovePetByName() {
+		testShelter.addToPets(testOrgCat);
+		testShelter.addToPets(testRoboDog);
+		int sizeBefore = testShelter.getSize();
+		testShelter.removePet("juju");
+		int sizeAfter = testShelter.getSize();
+		assertEquals(sizeBefore-1,sizeAfter);
+		testShelter.removePet("Bonnie");
+		assertEquals(testShelter.getSize(),0);
 	}
 }

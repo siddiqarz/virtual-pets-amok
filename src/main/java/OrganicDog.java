@@ -55,11 +55,25 @@ public class OrganicDog extends Dog implements OrganicPetActivities {
 @Override
 public void tickOrganics() {
 	thirstLevel +=2;
+	if(thirstLevel>10) {
+		thirstLevel =10;
+	}
+	if( thirstLevel <0) {
+		thirstLevel = 0;
+	}
 	hungerLevel +=2;
-	if (hungerLevel>8) {
+	if (hungerLevel>10) {
 		health-=2;
+		hungerLevel = 10;
 	}
 	wasteLevel +=2;
 	happiness -=2;
+	if (happiness<0) {
+		happiness=0;
+	}
+	if(happiness>10) {
+		health+=1;
+		happiness = 10;
+	}
 }
 }

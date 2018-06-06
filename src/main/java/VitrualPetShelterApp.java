@@ -29,6 +29,7 @@ public class VitrualPetShelterApp {
 		System.out.println("Welcome to Crazy Animals Pet Shelter!");
 		Boolean quit = false;
 
+		// Game Loop Begins
 		while (quit == false) {
 			System.out.println("The overall pet's stats are: ");
 			System.out.println("Name\t|Happiness\t|Health\t");
@@ -54,14 +55,14 @@ public class VitrualPetShelterApp {
 			// User interaction begins
 			System.out.println("What would you like to do next?");
 			System.out.println(
-					"1. Feed Pets\n2. Water Pets\n3. Walk the Dogs \n4. Oil the Robots \n5. Clean the litterbox \n6. Clean a cage \n7. Quit");
+					"1. Feed Pets\n2. Water Pets\n3. Walk the Dogs \n4. Oil the Robots \n5. Clean the litterbox \n6. Clean a cage \n7. Adopt a Pet \n8. Take in a pet \n9. Quit");
 			int userChoice = input.nextInt();
 
-			// Game loop begins
-			while (userChoice < 1 || userChoice > 7) {
+			// Makes sure user inputs only available choice
+			while (userChoice < 1 || userChoice > 9) {
 				System.out.println("Please choose from the following numbers: ");
 				System.out.println(
-						"1. Feed Pets\n2. Water Pets\n3. Walk the Dogs \n4. Oil the Robots t\n5. Clean the litterbox t\n6. Clean a cage\n7. Quit");
+						"1. Feed Pets\n2. Water Pets\n3. Walk the Dogs \n4. Oil the Robots \n5. Clean the litterbox \n6. Clean a cage\n8. Take in a pet \n9. Quit");
 				userChoice = input.nextInt();
 			}
 			input.nextLine();
@@ -80,20 +81,20 @@ public class VitrualPetShelterApp {
 				System.out.println("Organic Pets Stats Are: ");
 				System.out.println("Name\t| Hunger|Thirst");
 				myPet.getOrganicStats();
-			} 
-			//Walking
+			}
+			// Walking
 			else if (userChoice == 3) {
 				myPet.walkAllPets();
 				System.out.println("All the dogs are excited and exhausted!");
-			} 
-			//Oiling
+			}
+			// Oiling
 			else if (userChoice == 4) {
 				myPet.oilAllPets();
 				System.out.println("The Robo Rust Level is now: ");
 				System.out.println(myPet.getRustLevel());
 				System.out.println("Rust be gone!");
-			} 
-			
+			}
+
 			else if (userChoice == 5) {
 				myPet.cleanLitterBox();
 				System.out.println("Mmmm, puuurr-fect!");
@@ -136,11 +137,76 @@ public class VitrualPetShelterApp {
 					myPet.getCageDirtLevel();
 				}
 			} else if (userChoice == 7) {
+				System.out.println("Who would you like to adopt?");
+
+				for (VirtualPet eachPet : myPet.getAllPets()) {
+					System.out.println(eachPet.getName());
+				}
+
+				String petChoice = input.nextLine();
+				petChoice = petChoice.substring(0, 1).toUpperCase() + petChoice.substring(1).toLowerCase();
+				myPet.removePet(petChoice);
+			}
+
+			else if (userChoice == 8) {
+				System.out.println("Sure, we'll take a new pet!");
+				{
+					System.out.println(
+							"What kind of pet is it: \n1. Organic Cat \n2. Robotic Cat \n3. Organic Dog \n4. Robotic Dog");
+					int petType = input.nextInt();
+					input.nextLine();
+					switch (petType) {
+					case 1:
+						System.out.println("Let's choose a name: ");
+						String orgCat = input.nextLine();
+						orgCat = orgCat.substring(0, 1).toUpperCase() + orgCat.substring(1).toLowerCase();
+						System.out.println("Describe " + orgCat + "'s character");
+						String description = input.nextLine();
+						OrganicCat newCat = new OrganicCat(orgCat, description);
+						myPet.addToPets(newCat);
+						break;
+					case 2:
+						System.out.println("Let's choose a name: ");
+						String roboCat = input.nextLine();
+						roboCat = roboCat.substring(0, 1).toUpperCase() + roboCat.substring(1).toLowerCase();
+						System.out.println("Describe " + roboCat + "'s character");
+						String roboDescription = input.nextLine();
+						RoboCat newRoboCat = new RoboCat(roboCat, roboDescription);
+						myPet.addToPets(newRoboCat);
+						break;
+					case 3:
+						System.out.println("Let's choose a name: ");
+						String orgDog = input.nextLine();
+						orgDog = orgDog.substring(0, 1).toUpperCase() + orgDog.substring(1).toLowerCase();
+						System.out.println("Describe " + orgDog + "'s character");
+						String dogDescription = input.nextLine();
+						OrganicDog newDog = new OrganicDog(orgDog, dogDescription);
+						myPet.addToPets(newDog);
+						cage.addToCage(cageNum + 1, newDog);
+						break;
+					case 4:
+						System.out.println("Let's choose a name: ");
+						String robDog = input.nextLine();
+						robDog = robDog.substring(0, 1).toUpperCase() + robDog.substring(1).toLowerCase();
+						System.out.println("Describe " + robDog + "'s character");
+						String roboDogDescription = input.nextLine();
+						RoboDog newRDog = new RoboDog(robDog, roboDogDescription);
+						myPet.addToPets(newRDog);
+						cage.addToCage(cageNum += 1, newRDog);
+						break;
+					default:
+						System.out.println("We don't have that option available. Please try another time.");
+					}
+				}
+			}
+
+			// Quit program
+			else if (userChoice == 9) {
 				System.out.println("Thanks for hanging out and helping out!");
 				quit = true;
 			}
 			myPet.tick();
 		}
-		input.close();
+
 	}
 }

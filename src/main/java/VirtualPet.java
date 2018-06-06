@@ -30,9 +30,6 @@ public class VirtualPet {
 		return name;
 	}
 
-public void tick() {
-	
-}
 
 public String getDescription() {
 	return description;

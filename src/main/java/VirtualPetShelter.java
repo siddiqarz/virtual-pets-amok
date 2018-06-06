@@ -118,4 +118,18 @@ public class VirtualPetShelter {
 		}
 
 	}
+
+	public void removePet(String name) {
+//		for (VirtualPet eachPet : getAllPets()) {
+//			if (eachPet.getName().equalsIgnoreCase(name)) {
+				pets.remove(name);
+//			}
+			
+
+		//}
+	}
+
+	public int getSize() {
+		return pets.size();
+	}
 }
