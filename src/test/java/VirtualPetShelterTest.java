@@ -17,11 +17,11 @@ public class VirtualPetShelterTest { // emplo
 	@Before
 	public void setUp() {
 		
-		testOrgCat = new OrganicCat("Bonnie");
+		testOrgCat = new OrganicCat("Bonnie", "");
 		testShelter = new VirtualPetShelter();
-		testOrgDog = new OrganicDog("Rover");
-		testRoboDog = new RoboDog("juju");
-		testRoboCat = new RoboCat("whiskers");
+		testOrgDog = new OrganicDog("Rover", "");
+		testRoboDog = new RoboDog("juju", "");
+		testRoboCat = new RoboCat("whiskers", "");
 	}
 
 	@Test

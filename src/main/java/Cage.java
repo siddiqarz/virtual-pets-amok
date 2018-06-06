@@ -20,4 +20,23 @@ public class Cage {
 public Dog getCagesByNumber(int cageNum) {
 	return cages.get(cageNum);
 }
+
+public void cleanCage(Dog cagesByNumber) {
+	for (Dog eachDog : getAllCages()) {
+		if(eachDog instanceof OrganicDog) {
+			((OrganicDog) eachDog).cleanCages();
+		}
+	}
+	
+}
+public int getWasteLevel(Dog cagesByNumber) {
+	int waste =0;
+	for (Dog eachDog : getAllCages()) {
+		if(eachDog instanceof OrganicDog) {
+		waste =	((OrganicDog) eachDog).getWasteLevel();
+		}
+	}
+	return waste;
+}
+
 }

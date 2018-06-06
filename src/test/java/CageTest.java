@@ -17,8 +17,8 @@ RoboDog testRobo;
 	@Before
 	public void setUp() {
 		cageTest = new Cage();
-		testOrganic = new OrganicDog("Bill");
-		testRobo = new RoboDog("Mechy");
+		testOrganic = new OrganicDog("Bill", "");
+		testRobo = new RoboDog("Mechy", "");
 }
 	@Test
 	public void shouldBeAbleToAddDogsToCage() {
@@ -37,5 +37,14 @@ RoboDog testRobo;
 		cageTest.getCagesByNumber(2);
 		System.out.println((cageTest.getCagesByNumber(2)).getName());
 
+	}
+	@Test
+	public void shouldBeAbleToCleanEachCage() {
+		cageTest.addToCage(1, testOrganic);
+		cageTest.addToCage(2, testRobo);
+		int cageDirtBefore = cageTest.getWasteLevel(cageTest.getCagesByNumber(2));
+		cageTest.cleanCage(cageTest.getCagesByNumber(2));
+		int cageDirtAfter = cageTest.getWasteLevel(cageTest.getCagesByNumber(2));
+		assertTrue(cageDirtBefore>cageDirtAfter);
 	}
 }

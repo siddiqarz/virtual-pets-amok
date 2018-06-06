@@ -25,21 +25,41 @@ public class OrganicDog extends Dog implements OrganicPetActivities {
 
 	@Override
 	public int getThirstLevel() {
-		return 0;
+		return thirstLevel;
 	}
 
 	public void walkDog() {
 		super.walkDog();
 		wasteLevel -= 5;
+		hungerLevel += 3;
 	}
 
 	public void cleanCages() {
 
+		wasteLevel = 0;
+		happiness++;
 	}
 
 	@Override
 	public void feedPet() {
 		hungerLevel = 0;
+		wasteLevel +=3;
+
 	}
 
+	@Override
+	public void waterPet() {
+		thirstLevel = 0;
+	}
+
+@Override
+public void tickOrganics() {
+	thirstLevel +=2;
+	hungerLevel +=2;
+	if (hungerLevel>8) {
+		health-=2;
+	}
+	wasteLevel +=2;
+	happiness -=2;
+}
 }

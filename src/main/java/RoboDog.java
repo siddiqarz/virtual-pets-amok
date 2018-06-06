@@ -9,6 +9,7 @@ public class RoboDog extends Dog implements RoboticInterface {
 
 	}
 
+	@Override
 	public int getRustLevel() {
 		return rustLevel;
 	}
