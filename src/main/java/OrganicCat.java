@@ -7,8 +7,8 @@ public class OrganicCat extends VirtualPet implements OrganicPetActivities {
 	protected int hungerLevel = DEFAULT_HUNGER_LEVEL;
 	protected int thirstLevel = DEFAULT_THIRST_LEVEL;
 
-	public OrganicCat(String name) {
-		super(name);
+	public OrganicCat(String name, String description) {
+		super(name, description);
 	}
 
 	// Getters

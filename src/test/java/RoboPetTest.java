@@ -12,11 +12,11 @@ public class RoboPetTest {
 
 	@Before
 	public void setUp() {
-		testRoboCat = new RoboCat("Joe");
-		testRoboDog = new RoboDog("Moe");
+		testRoboCat = new RoboCat("Joe", "");
+		testRoboDog = new RoboDog("Moe", "");
 		virtualPet = new VirtualPetShelter();
-		testODog = new OrganicDog("Sparky");
-		underTest = new VirtualPet("j");
+		testODog = new OrganicDog("Sparky", "");
+		underTest = new VirtualPet("j","");
 	}
 
 	@Test

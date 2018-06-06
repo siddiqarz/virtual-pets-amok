@@ -9,8 +9,8 @@ public class VirtualPetTest {
 
 	@Before
 	public void setUp() {
-		testVirtualPet = new VirtualPet("");
-		testOrgCat = new OrganicCat("Joe");
+		testVirtualPet = new VirtualPet("", "");
+		testOrgCat = new OrganicCat("Joe", "");
 	}
 
 	@Test

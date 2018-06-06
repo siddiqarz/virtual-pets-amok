@@ -10,9 +10,11 @@ public class VirtualPet {
 	private String name;
 	protected int health = DEFAULT_HEALTH;
 	protected int happiness = DEFAULT_HAPPINESS;
+	private String description;
 
-	public VirtualPet(String name) {
+	public VirtualPet(String name, String description) {
 		this.name=name;
+		this.description= description;
 	}
 
 	public int getHappiness() {
@@ -30,6 +32,14 @@ public class VirtualPet {
 
 public void tick() {
 	
+}
+
+public String getDescription() {
+	return description;
+}
+
+public void setDescription(String description) {
+	this.description = description;
 }
 	
 

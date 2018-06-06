@@ -13,9 +13,9 @@ public class OrganicCatTest {
 
 	@Before
 	public void setUp() {
-		testOrgCat = new OrganicCat("Joe");
-		testOrgDog = new OrganicDog("Moe");
-		testOrgCat2 = new OrganicCat("Fluffy");
+		testOrgCat = new OrganicCat("Joe", "");
+		testOrgDog = new OrganicDog("Moe", "");
+		testOrgCat2 = new OrganicCat("Fluffy", "");
 		testPet = new VirtualPetShelter();
 	}
 

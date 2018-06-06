@@ -7,8 +7,8 @@ public class OrganicDog extends Dog implements OrganicPetActivities {
 	protected int thirstLevel = DEFAULT_THIRST_LEVEL;
 	protected int wasteLevel = DEFAULT_WASTE_LEVEL;
 
-	public OrganicDog(String name) {
-		super(name);
+	public OrganicDog(String name, String description) {
+		super(name, description);
 		// TODO Auto-generated constructor stub
 	}
 
