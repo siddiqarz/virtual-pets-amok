@@ -8,4 +8,5 @@ public interface OrganicPetActivities {
 
 	int getThirstLevel();
 
+	void feedPet();
 }

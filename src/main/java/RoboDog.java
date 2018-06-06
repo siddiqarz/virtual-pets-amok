@@ -6,15 +6,16 @@ public class RoboDog extends Dog implements RoboticInterface {
 
 	public RoboDog(String name) {
 		super(name);
-		
+
 	}
+
 	public int getRustLevel() {
 		return rustLevel;
 	}
-@Override
-public void oilAllPets() {
-	rustLevel-=1;
-}
 
+	@Override
+	public void oilPet() {
+		rustLevel -= 1;
+	}
 
 }

@@ -1,5 +1,5 @@
 
 public interface RoboticInterface {
 
-	void oilAllPets();
+	void oilPet();
 }

@@ -8,7 +8,7 @@ public class Dog extends VirtualPet {
 	}
 
 
-	public void walkAllDogs() {
+	public void walkDog() {
 		happiness += 5;
 	}
 

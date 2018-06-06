@@ -6,38 +6,48 @@ public class OrganicCat extends VirtualPet implements OrganicPetActivities {
 	protected int wasteLevel = DEFAULT_WASTE_LEVEL;
 	protected int hungerLevel = DEFAULT_HUNGER_LEVEL;
 	protected int thirstLevel = DEFAULT_THIRST_LEVEL;
-	
+
 	public OrganicCat(String name) {
 		super(name);
 	}
 
 	// Getters
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see OrganicPetActivities#getWasteLevel()
 	 */
 	@Override
 	public int getWasteLevel() {
-		return wasteLevel ;
+		return wasteLevel;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see OrganicPetActivities#getHungerLevel()
 	 */
 	@Override
 	public int getHungerLevel() {
-		return hungerLevel ;
+		return hungerLevel;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see OrganicPetActivities#getThirstLevel()
 	 */
 	@Override
 	public int getThirstLevel() {
-		return thirstLevel ;
+		return thirstLevel;
 	}
-	
+
 	public void cleanLitterBox() {
-		wasteLevel-=3;
+		wasteLevel -= 3;
+	}
+
+	@Override
+	public void feedPet() {
+		hungerLevel = 0;
 	}
 }
-

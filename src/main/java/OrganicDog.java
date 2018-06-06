@@ -20,7 +20,7 @@ public class OrganicDog extends Dog implements OrganicPetActivities {
 	@Override
 	public int getHungerLevel() {
 
-		return 0;
+		return hungerLevel;
 	}
 
 	@Override
@@ -28,12 +28,18 @@ public class OrganicDog extends Dog implements OrganicPetActivities {
 		return 0;
 	}
 
-	public void walkAllDogs() {
-		super.walkAllDogs();
+	public void walkDog() {
+		super.walkDog();
 		wasteLevel -= 5;
 	}
 
 	public void cleanCages() {
-		
+
 	}
+
+	@Override
+	public void feedPet() {
+		hungerLevel = 0;
+	}
+
 }
