@@ -44,34 +44,53 @@ public class OrganicCat extends VirtualPet implements OrganicPetActivities {
 
 	public void cleanLitterBox() {
 		wasteLevel = 0;
-		happiness +=2;
+		happiness += 2;
 	}
 
 	@Override
 	public void feedPet() {
 		hungerLevel = 0;
-		happiness +=1;
+		happiness += 1;
 		wasteLevel++;
 	}
 
 	@Override
 	public void waterPet() {
-thirstLevel = 0;		
+		thirstLevel = 0;
 	}
 
 	@Override
 	public void tickOrganics() {
-		thirstLevel +=2;
-		hungerLevel +=2;
-		if (hungerLevel>6) {
-			health-=3;
+
+		if (thirstLevel > 10) {
+			thirstLevel = 10;
 		}
-		wasteLevel +=2;
-		if(wasteLevel>7) {
-			health --;
+		if (thirstLevel < 0) {
+			thirstLevel = 0;
+		}
+
+		if (hungerLevel > 6) {
+			health -= 3;
+		}
+		if (hungerLevel > 10) {
+			hungerLevel = 10;
+		}
+		if (hungerLevel < 0) {
+			hungerLevel = 0;
+		}
+
+		if (wasteLevel > 7) {
+			health--;
 			happiness--;
 		}
-		happiness -=2;
-		
+		if (health > 10) {
+			health = 10;
+		}
+		//changes over time/game loop
+		thirstLevel += 2;
+		wasteLevel += 2;
+		happiness -= 2;
+		hungerLevel += 2;
+
 	}
 }

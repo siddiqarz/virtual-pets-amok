@@ -35,6 +35,12 @@ public String getDescription() {
 	return description;
 }
 
+public void play() {
+	happiness+=2;
+	health++;
+	
+}
+
 
 	
 

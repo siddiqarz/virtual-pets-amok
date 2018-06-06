@@ -107,7 +107,13 @@ public class VirtualPetShelter {
 			}
 		}
 	}
-
+	public void playWithPet(String petName) {
+		for (VirtualPet eachPet:getAllPets()) {
+		if(eachPet.getName().equalsIgnoreCase(petName)) {
+			eachPet.play();
+		}
+	}
+	}
 	public void tick() {
 		for (VirtualPet eachPet : getAllPets()) {
 			if (eachPet instanceof OrganicPetActivities) {
@@ -120,13 +126,8 @@ public class VirtualPetShelter {
 	}
 
 	public void removePet(String name) {
-//		for (VirtualPet eachPet : getAllPets()) {
-//			if (eachPet.getName().equalsIgnoreCase(name)) {
 				pets.remove(name);
-//			}
-			
 
-		//}
 	}
 
 	public int getSize() {

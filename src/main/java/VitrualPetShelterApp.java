@@ -55,14 +55,16 @@ public class VitrualPetShelterApp {
 			// User interaction begins
 			System.out.println("What would you like to do next?");
 			System.out.println(
-					"1. Feed Pets\n2. Water Pets\n3. Walk the Dogs \n4. Oil the Robots \n5. Clean the litterbox \n6. Clean a cage \n7. Adopt a Pet \n8. Take in a pet \n9. Quit");
+					"1. Feed Pets\n2. Water Pets\n3. Walk the Dogs \n4. Oil the Robots \n5. Clean the litterbox \n6. Clean a cage"
+					+ " \n7. Adopt a Pet \n8. Take in a pet \n9. Play with a pet \n10. Quit");
 			int userChoice = input.nextInt();
 
 			// Makes sure user inputs only available choice
-			while (userChoice < 1 || userChoice > 9) {
+			while (userChoice < 1 || userChoice > 10) {
 				System.out.println("Please choose from the following numbers: ");
 				System.out.println(
-						"1. Feed Pets\n2. Water Pets\n3. Walk the Dogs \n4. Oil the Robots \n5. Clean the litterbox \n6. Clean a cage\n8. Take in a pet \n9. Quit");
+						"1. Feed Pets\n2. Water Pets\n3. Walk the Dogs \n4. Oil the Robots \n5. Clean the litterbox \n6. Clean a cage"
+						+ "\n7. Adopt a Pet \n8. Take in a pet\n9. Play with a pet \n10. Quit");
 				userChoice = input.nextInt();
 			}
 			input.nextLine();
@@ -199,9 +201,19 @@ public class VitrualPetShelterApp {
 					}
 				}
 			}
-
-			// Quit program
 			else if (userChoice == 9) {
+				System.out.println("Who would you like to play with?");
+
+				for (VirtualPet eachPet : myPet.getAllPets()) {
+					System.out.println(eachPet.getName());
+				}
+
+				String petChoice = input.nextLine();
+				petChoice = petChoice.substring(0, 1).toUpperCase() + petChoice.substring(1).toLowerCase();
+				myPet.playWithPet(petChoice);
+			}
+			// Quit program
+			else if (userChoice == 10) {
 				System.out.println("Thanks for hanging out and helping out!");
 				quit = true;
 			}

@@ -43,7 +43,7 @@ public class OrganicDog extends Dog implements OrganicPetActivities {
 	@Override
 	public void feedPet() {
 		hungerLevel = 0;
-		wasteLevel +=3;
+		wasteLevel += 3;
 
 	}
 
@@ -52,28 +52,31 @@ public class OrganicDog extends Dog implements OrganicPetActivities {
 		thirstLevel = 0;
 	}
 
-@Override
-public void tickOrganics() {
-	thirstLevel +=2;
-	if(thirstLevel>10) {
-		thirstLevel =10;
+	@Override
+	public void tickOrganics() {
+		//changes over time/gameloop
+		thirstLevel += 2;
+		wasteLevel += 2;
+		happiness -= 2;
+
+		if (thirstLevel > 10) {
+			thirstLevel = 10;
+		}
+		if (thirstLevel < 0) {
+			thirstLevel = 0;
+		}
+		hungerLevel += 2;
+		if (hungerLevel > 10) {
+			health -= 2;
+			hungerLevel = 10;
+		}
+
+		if (happiness < 0) {
+			happiness = 0;
+		}
+		if (happiness > 10) {
+			health += 1;
+			happiness = 10;
+		}
 	}
-	if( thirstLevel <0) {
-		thirstLevel = 0;
-	}
-	hungerLevel +=2;
-	if (hungerLevel>10) {
-		health-=2;
-		hungerLevel = 10;
-	}
-	wasteLevel +=2;
-	happiness -=2;
-	if (happiness<0) {
-		happiness=0;
-	}
-	if(happiness>10) {
-		health+=1;
-		happiness = 10;
-	}
-}
 }
