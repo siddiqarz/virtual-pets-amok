@@ -17,4 +17,11 @@ public class RoboCat extends VirtualPet implements RoboticInterface {
 		rustLevel -= 1;
 	}
 
+	@Override
+	public void tickRobotics() {
+		rustLevel++;
+		happiness--;
+		health--;
+	}
+
 }

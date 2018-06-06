@@ -33,6 +33,7 @@ public class VirtualPetShelter {
 		}
 		return waste;
 	}
+
 	public void getCageDirtLevel() {
 		int waste = 0;
 		for (VirtualPet eachPet : getAllPets()) {
@@ -40,17 +41,19 @@ public class VirtualPetShelter {
 				System.out.println(eachPet.getName() + " " + ((Dog) eachPet).getWasteLevel());
 			}
 		}
-		
+
 	}
+
 	public int getRustLevel() {
 		int rust = 0;
-		for(VirtualPet eachPet:getAllPets()) {
-			if(eachPet instanceof RoboticInterface) {
-				rust = ((RoboticInterface)eachPet).getRustLevel();
+		for (VirtualPet eachPet : getAllPets()) {
+			if (eachPet instanceof RoboticInterface) {
+				rust = ((RoboticInterface) eachPet).getRustLevel();
 			}
 		}
 		return rust;
 	}
+
 	// Accessors
 	public void oilAllPets() {
 		for (VirtualPet eachPet : getAllPets()) {
@@ -106,14 +109,13 @@ public class VirtualPetShelter {
 	}
 
 	public void tick() {
-		for(VirtualPet eachPet : getAllPets()) {
-			if(eachPet instanceof OrganicPetActivities) {
-			((OrganicPetActivities)eachPet).tickOrganics();
-			}
-			else if (eachPet instanceof OrganicCat) {
-				
+		for (VirtualPet eachPet : getAllPets()) {
+			if (eachPet instanceof OrganicPetActivities) {
+				((OrganicPetActivities) eachPet).tickOrganics();
+			} else if (eachPet instanceof RoboticInterface) {
+				((RoboticInterface) eachPet).tickRobotics();
 			}
 		}
-		
+
 	}
 }

@@ -1,3 +1,4 @@
+import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.junit.Assert.assertEquals;
@@ -31,11 +32,12 @@ RoboDog testRobo;
 	}
 	
 	@Test
-	public void shouldBeAbleToGetCageNum() {
+	public void shouldBeAbleToGetDogNameByCageNum() {
 		cageTest.addToCage(1, testOrganic);
 		cageTest.addToCage(2, testRobo);
-		cageTest.getCagesByNumber(2);
-		System.out.println((cageTest.getCagesByNumber(2)).getName());
+		String name = cageTest.getCagesByNumber(2).getName();
+		assertThat(name, is("Mechy"));
+		//System.out.println((cageTest.getCagesByNumber(2)).getName());
 
 	}
 	@Test

@@ -80,13 +80,21 @@ public class VitrualPetShelterApp {
 				System.out.println("Organic Pets Stats Are: ");
 				System.out.println("Name\t| Hunger|Thirst");
 				myPet.getOrganicStats();
-			} else if (userChoice == 3) {
+			} 
+			//Walking
+			else if (userChoice == 3) {
 				myPet.walkAllPets();
 				System.out.println("All the dogs are excited and exhausted!");
-			} else if (userChoice == 4) {
+			} 
+			//Oiling
+			else if (userChoice == 4) {
 				myPet.oilAllPets();
+				System.out.println("The Robo Rust Level is now: ");
+				System.out.println(myPet.getRustLevel());
 				System.out.println("Rust be gone!");
-			} else if (userChoice == 5) {
+			} 
+			
+			else if (userChoice == 5) {
 				myPet.cleanLitterBox();
 				System.out.println("Mmmm, puuurr-fect!");
 			} else if (userChoice == 6) {
