@@ -86,6 +86,12 @@ public class OrganicCat extends VirtualPet implements OrganicPetActivities {
 		if (health > 10) {
 			health = 10;
 		}
+		if (happiness >10) {
+			happiness = 10;
+		}
+		if(happiness <0) {
+			happiness = 0;
+		}
 		//changes over time/game loop
 		thirstLevel += 2;
 		wasteLevel += 2;

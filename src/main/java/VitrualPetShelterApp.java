@@ -138,7 +138,9 @@ public class VitrualPetShelterApp {
 					System.out.println("The cage dirt level is now: ");
 					myPet.getCageDirtLevel();
 				}
-			} else if (userChoice == 7) {
+			}
+			//Adopting a pet
+			else if (userChoice == 7) {
 				System.out.println("Who would you like to adopt?");
 
 				for (VirtualPet eachPet : myPet.getAllPets()) {
@@ -153,6 +155,7 @@ public class VitrualPetShelterApp {
 			else if (userChoice == 8) {
 				System.out.println("Sure, we'll take a new pet!");
 				{
+					
 					System.out.println(
 							"What kind of pet is it: \n1. Organic Cat \n2. Robotic Cat \n3. Organic Dog \n4. Robotic Dog");
 					int petType = input.nextInt();
@@ -184,7 +187,7 @@ public class VitrualPetShelterApp {
 						String dogDescription = input.nextLine();
 						OrganicDog newDog = new OrganicDog(orgDog, dogDescription);
 						myPet.addToPets(newDog);
-						cage.addToCage(cageNum + 1, newDog);
+						cage.addToCage((cageNum=cageNum+1), newDog);
 						break;
 					case 4:
 						System.out.println("Let's choose a name: ");
@@ -194,7 +197,7 @@ public class VitrualPetShelterApp {
 						String roboDogDescription = input.nextLine();
 						RoboDog newRDog = new RoboDog(robDog, roboDogDescription);
 						myPet.addToPets(newRDog);
-						cage.addToCage(cageNum += 1, newRDog);
+						cage.addToCage((cageNum=cageNum+1), newRDog);
 						break;
 					default:
 						System.out.println("We don't have that option available. Please try another time.");
@@ -217,6 +220,7 @@ public class VitrualPetShelterApp {
 				System.out.println("Thanks for hanging out and helping out!");
 				quit = true;
 			}
+			//implements changes each loop
 			myPet.tick();
 		}
 
