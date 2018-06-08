@@ -14,11 +14,13 @@ public class CageTest {
 Cage cageTest;
 OrganicDog testOrganic;
 RoboDog testRobo;
+OrganicDog testOrganic1;
 	
 	@Before
 	public void setUp() {
 		cageTest = new Cage();
 		testOrganic = new OrganicDog("Bill", "");
+		testOrganic1 = new OrganicDog("Teng","");
 		testRobo = new RoboDog("Mechy", "");
 }
 	@Test
@@ -44,10 +46,12 @@ RoboDog testRobo;
 	public void shouldBeAbleToCleanEachCage() {
 		cageTest.addToCage(1, testOrganic);
 		cageTest.addToCage(2, testRobo);
-		int cageDirtBefore = cageTest.getWasteLevel(cageTest.getCagesByNumber(2));
-		cageTest.cleanCage(cageTest.getCagesByNumber(2));
-		int cageDirtAfter = cageTest.getWasteLevel(cageTest.getCagesByNumber(2));
-		assertTrue(cageDirtBefore>cageDirtAfter);
+		cageTest.addToCage(3, testOrganic1);
+		int cage1B4 = cageTest.getWasteLevel(testOrganic);
+		System.out.println(cage1B4);
+	cageTest.cleanCage(cageTest.getCagesByNumber(1));
+	 int cage1After = cageTest.getWasteLevel(testOrganic);
+	 System.out.println(cage1After);
 	}
 	
 }

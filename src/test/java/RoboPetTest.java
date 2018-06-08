@@ -44,7 +44,7 @@ public class RoboPetTest {
 		int rustLevelDog = testRoboDog.getRustLevel();
 		int rustLevel = testRoboCat.getRustLevel();
 		assertEquals(rustLevelDog, 3);
-		assertEquals(rustLevel, 0);
+		assertEquals(rustLevel, 1);
 	}
 
 	@Test
@@ -55,7 +55,7 @@ public class RoboPetTest {
 		int rustLevelAfter = testRoboDog.getRustLevel();
 		int catRustAfter = testRoboCat.getRustLevel();
 		assertEquals(rustLevelAfter, 3);
-		assertEquals(catRustAfter, 0);
+		assertEquals(catRustAfter, 1);
 
 	}
 

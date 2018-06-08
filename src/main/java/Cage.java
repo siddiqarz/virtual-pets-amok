@@ -16,27 +16,26 @@ public class Cage {
 	public int getSize() {
 		return cages.size();
 	}
-	
-public Dog getCagesByNumber(int cageNum) {
-	return cages.get(cageNum);
-}
 
-public void cleanCage(Dog cagesByNumber) {
-	for (Dog eachDog : getAllCages()) {
-		if(eachDog instanceof OrganicDog) {
-			((OrganicDog) eachDog).cleanCages();
-		}
+	public Dog getCagesByNumber(int cageNum) {
+		return cages.get(cageNum);
 	}
-	
-}
-public int getWasteLevel(Dog cagesByNumber) {
-	int waste =0;
-	for (Dog eachDog : getAllCages()) {
-		if(eachDog instanceof OrganicDog) {
-		waste =	((OrganicDog) eachDog).getWasteLevel();
+
+	public void cleanCage(Dog selectedDog) {
+		if (selectedDog instanceof OrganicDog) {
+			((OrganicDog) selectedDog).cleanCages();
 		}
+
 	}
-	return waste;
-}
+
+	public int getWasteLevel(Dog cagesByNumber) {
+		int waste = 0;
+		for (Dog eachDog : getAllCages()) {
+			if (eachDog instanceof OrganicDog) {
+				waste = ((OrganicDog) eachDog).getWasteLevel();
+			}
+		}
+		return waste;
+	}
 
 }
