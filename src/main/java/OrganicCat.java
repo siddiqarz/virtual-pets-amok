@@ -50,7 +50,7 @@ public class OrganicCat extends VirtualPet implements OrganicPetActivities {
 	@Override
 	public void feedPet() {
 		hungerLevel = 0;
-		happiness += 1;
+		happiness += 5;
 		wasteLevel++;
 	}
 

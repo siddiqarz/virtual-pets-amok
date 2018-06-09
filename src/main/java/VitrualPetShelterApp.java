@@ -39,12 +39,11 @@ public class VitrualPetShelterApp {
 						eachPet.getName() + "\t|" + eachPet.getHappiness() + "       \t|" + eachPet.getHealth());
 			}
 			// Prints out stats of organic Pets
-			System.out.println("Organic Pets Stats "); 
+			System.out.println("Organic Pets Stats ");
 			System.out.println("Name\t| Hunger |Thirst");
 			myPet.getOrganicStats();
 
 			// Litterbox waste level
-			
 
 			System.out.println("The dog's cage dirt level : ");
 			myPet.getCageDirtLevel();
@@ -56,8 +55,8 @@ public class VitrualPetShelterApp {
 				System.out.println("Your cats are starting to look a little sick");
 				System.out.println("The cats litterbox waste level is: " + myPet.getLitterBoxDirtLevel());
 			}
-			
-			if(myPet.getRustLevel()>5) {
+
+			if (myPet.getRustLevel() > 5) {
 				System.out.println("Your pets might need some oiling");
 				System.out.println("The overall rust level is: " + myPet.getRustLevel());
 			}
@@ -117,13 +116,13 @@ public class VitrualPetShelterApp {
 
 				// inquires whose cage user wants to clean. All roboDog cages do not require
 				// cleaning.
-				System.out.println("Do you want to: \n1. clean them all \n2. Clean by number");
+				System.out.println("Do you want to: \n1. Clean them all \n2. Clean by number");
 				int cageChoice = input.nextInt();
 
 				// Loops to make sure user inputs correct number
 				while (cageChoice < 1 || cageChoice > 2) {
 					System.out.println("Please choose between 1 and 2");
-					System.out.println("Do you want to: \n1. clean them all \n2. Clean by number");
+					System.out.println("Do you want to: \n1. Clean them all \n2. Clean by number");
 					cageChoice = input.nextInt();
 				}
 				// cleaning all cages
@@ -136,7 +135,7 @@ public class VitrualPetShelterApp {
 
 				// cleaning by cage choice
 				else if (cageChoice == 2) {
-					System.out.println("Whose cage do you want to clean?:");
+					System.out.println("Choose by number whose cage you want to clean?:");
 					int i = 1;
 					while (i <= cageNum) {
 						System.out.println("cage " + i + " " + cage.getCagesByNumber(i).getName());

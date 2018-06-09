@@ -15,7 +15,7 @@ public class RoboCat extends VirtualPet implements RoboticInterface {
 	@Override
 	public void oilPet() {
 		rustLevel -= 5;
-		happiness +=2;
+		happiness +=4;
 	}
 
 	@Override
