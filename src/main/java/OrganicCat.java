@@ -44,7 +44,7 @@ public class OrganicCat extends VirtualPet implements OrganicPetActivities {
 
 	public void cleanLitterBox() {
 		wasteLevel = 0;
-		happiness += 2;
+		happiness += 4;
 	}
 
 	@Override
@@ -65,7 +65,7 @@ public class OrganicCat extends VirtualPet implements OrganicPetActivities {
 		//changes over time/game loop
 		thirstLevel += 2;
 		wasteLevel += 2;
-		happiness -= 2;
+		happiness -= 1;
 		hungerLevel += 2;
 
 

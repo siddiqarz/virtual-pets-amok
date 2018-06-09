@@ -16,13 +16,14 @@ public class RoboDog extends Dog implements RoboticInterface {
 
 	@Override
 	public void oilPet() {
-		rustLevel -= 1;
+		rustLevel -= 5;
+		happiness += 2;
 	}
 
 	@Override
 	public void tickRobotics() {
-rustLevel ++;
-happiness --;
+		rustLevel++;
+		happiness--;
 	}
 
 }

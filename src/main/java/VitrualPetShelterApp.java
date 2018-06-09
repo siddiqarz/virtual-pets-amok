@@ -39,20 +39,27 @@ public class VitrualPetShelterApp {
 						eachPet.getName() + "\t|" + eachPet.getHappiness() + "       \t|" + eachPet.getHealth());
 			}
 			// Prints out stats of organic Pets
-			System.out.println("Organic Pets Stats Are: ");
+			System.out.println("Organic Pets Stats "); 
 			System.out.println("Name\t| Hunger |Thirst");
 			myPet.getOrganicStats();
 
 			// Litterbox waste level
-			System.out.println("The cats litterbox waste level is: " + myPet.getLitterBoxDirtLevel());
+			
 
-			System.out.println("The dog's cage level : ");
+			System.out.println("The dog's cage dirt level : ");
 			myPet.getCageDirtLevel();
 
-			if (myPet.getLitterBoxDirtLevel() > 5 && myPet.getLitterBoxDirtLevel() < 8) {
+			if (myPet.getLitterBoxDirtLevel() > 10 && myPet.getLitterBoxDirtLevel() < 15) {
 				System.out.println("The litterbox is getting stinky");
-			} else if (myPet.getLitterBoxDirtLevel() >= 8) {
+				System.out.println("The cats litterbox waste level is: " + myPet.getLitterBoxDirtLevel());
+			} else if (myPet.getLitterBoxDirtLevel() >= 20) {
 				System.out.println("Your cats are starting to look a little sick");
+				System.out.println("The cats litterbox waste level is: " + myPet.getLitterBoxDirtLevel());
+			}
+			
+			if(myPet.getRustLevel()>5) {
+				System.out.println("Your pets might need some oiling");
+				System.out.println("The overall rust level is: " + myPet.getRustLevel());
 			}
 
 			// User interaction begins

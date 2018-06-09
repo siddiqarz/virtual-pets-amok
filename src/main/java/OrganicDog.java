@@ -37,7 +37,7 @@ public class OrganicDog extends Dog implements OrganicPetActivities {
 	public void cleanCages() {
 
 		wasteLevel = 0;
-		happiness++;
+		happiness+=5;
 	}
 
 	@Override
